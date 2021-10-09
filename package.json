@@ -10,14 +10,28 @@
         "production": "mix --production"
     },
     "devDependencies": {
-        "@tailwindcss/forms": "^0.3.1",
-        "@tailwindcss/typography": "^0.4.0",
+        "@tailwindcss/forms": "^0.3.4",
+        "@tailwindcss/typography": "^0.4.1",
         "alpinejs": "^3.0.6",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
         "postcss": "^8.1.14",
         "postcss-import": "^14.0.1",
-        "tailwindcss": "^2.2.2"
+        "resolve-url-loader": "^4.0.0",
+        "sass": "^1.42.1",
+        "sass-loader": "^12.1.0",
+        "tailwindcss": "^2.2.2",
+        "tailwindcss-flip": "^1.0.0"
+    },
+    "dependencies": {
+        "@alpinejs/collapse": "^3.4.2",
+        "@alpinejs/intersect": "^3.4.2",
+        "@alpinejs/persist": "^3.4.2",
+        "@alpinejs/trap": "^3.4.2",
+        "@tailwindcss/aspect-ratio": "^0.3.0",
+        "daisyui": "^1.14.2",
+        "sweetalert2": "^11.1.7",
+        "vazir-font": "^30.1.0"
     }
 }

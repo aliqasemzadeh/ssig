@@ -1,4 +1,12 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/js/app.js": "/js/app.js?id=4b3baba74b8e03112e4c",
+    "/css/fonts.css": "/css/fonts.css?id=df7adc3098ac4cf7ad6c",
+    "/css/app.css": "/css/app.css?id=edc136e71817dcada719",
+    "/images/1.jpg": "/images/1.jpg?id=c008ed11815bd7fd333f",
+    "/images/2.jpg": "/images/2.jpg?id=d07a1572ead88b708878",
+    "/images/3.jpg": "/images/3.jpg?id=b026a67ab3256f8d0375",
+    "/images/4.jpg": "/images/4.jpg?id=ac05bed6941823e17a4b",
+    "/images/5.jpg": "/images/5.jpg?id=faecd9d4ea5fbb83ce5a",
+    "/images/6.jpg": "/images/6.jpg?id=688a4bd0b8493c9df797",
+    "/images/7.jpg": "/images/7.jpg?id=1a4041d3c92d5b0b3ba1"
 }

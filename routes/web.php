@@ -22,6 +22,8 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::get('/user/signature/{user}',[\App\Http\Controllers\UserController::class, 'signature'])->name('user.signature');
 
 
+    Route::get('/panel/dashboard/index', \App\Http\Livewire\Panel\Dashboard\Index::class)->name('panel.dashboard.index');
+
     Route::get('/supply/dashboard/index', \App\Http\Livewire\Supply\Dashboard\Index::class)->name('supply.dashboard.index');
 
     Route::get('/admin/dashboard/index', \App\Http\Livewire\Admin\Dashboard\Index::class)->name('admin.dashboard.index');

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'title' => 'نرم افزار جامع دریایی',
     'direction' => 'rtl',
     'select_system' => 'انتخاب سامانه',
     'captcha' => 'عبارت تصادفی',

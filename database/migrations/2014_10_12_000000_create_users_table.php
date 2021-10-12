@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('employee_code')->nullable();
             $table->foreignId('group_id')->index();
             $table->string('sign_file')->nullable();
+            $table->string('avatar_file')->nullable();
             $table->string('email')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

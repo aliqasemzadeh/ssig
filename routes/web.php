@@ -13,10 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::middleware(['auth:sanctum'])->group(function () {
+    Route::get('/', function () {
+        return redirect('login');
+    });
+
+
+
+    Route::get('/supply/dashboard/index', \App\Http\Livewire\Supply\Dashboard\Index::class)->name('supply.dashboard.index');
+
+    Route::get('/admin/dashboard/index', \App\Http\Livewire\Admin\Dashboard\Index::class)->name('admin.dashboard.index');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');

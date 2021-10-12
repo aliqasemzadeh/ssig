@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'username' => '2280215667',
             'email' => 'ali@ghasemzadeh.ir',
             'email_verified_at' => Carbon::now(),
-            'password' => Hash::make('KingOfIran@21'),
+            'password' => Hash::make('Hero@Zero@21'),
         ]);
     }
 }

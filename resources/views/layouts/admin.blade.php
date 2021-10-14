@@ -19,13 +19,13 @@
 <body class="font-sans antialiased">
 
 
-<div class="h-screen flex overflow-hidden bg-gray-100">
+<div class="h-screen flex overflow-hidden bg-gray-100"  x-data="{ open: false }">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-    <div class="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true" x-cloak>
+    <div class="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true" x-cloak  x-transition x-show="open" @click.away="open = false">
         <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
         <div class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-gray-800">
             <div class="absolute top-0 right-0 -mr-12 pt-2">
-                <button type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <button type="button" class="ml-1 flex items-center justify-center h-10 w-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"  @click="open = ! open">
                     <span class="sr-only">Close sidebar</span>
                     <!-- Heroicon name: outline/x -->
                     <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

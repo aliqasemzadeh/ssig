@@ -11,7 +11,6 @@ use LivewireUI\Modal\ModalComponent;
 
 class Create extends ModalComponent
 {
-    use WithPagination;
     public $title;
     public $description;
     public $start_at;
@@ -21,8 +20,6 @@ class Create extends ModalComponent
 
     public function create()
     {
-        dd($this->start_at);
-
         $this->validate([
            'title' => 'required|string',
            'group_id' => 'required|string',
@@ -37,8 +34,8 @@ class Create extends ModalComponent
         $project->group_id = $this->group_id;
         $project->category_id = $this->category_id;
         $project->description = $this->description;
-        $project->start_at = $this->start_at;
-        $project->finish_at = $this->finish_at;
+        $project->start_at =  \Morilog\Jalali\CalendarUtils::createDatetimeFromFormat('Y/m/d', $this->start_at);
+        $project->finish_at =  \Morilog\Jalali\CalendarUtils::createDatetimeFromFormat('Y/m/d', $this->finish_at);
         $project->save();
 
         $this->closeModalWithEvents([

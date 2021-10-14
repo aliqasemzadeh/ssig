@@ -29,7 +29,7 @@ class Create extends ModalComponent
 
         $this->alert(
             'success',
-            __('admin.created')
+            __('global.created')
         );
     }
 

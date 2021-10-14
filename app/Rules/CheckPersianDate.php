@@ -26,7 +26,9 @@ class CheckPersianDate implements Rule
     public function passes($attribute, $value)
     {
         $dateArray = explode('/', $value);
-        dd($value);
+        if(count($dateArray) != 3) {
+            return false;
+        }
         return \Morilog\Jalali\CalendarUtils::checkDate($dateArray[0], $dateArray[1], $dateArray[2]);
     }
 

@@ -13,8 +13,4 @@ class Group extends Model
 
     public $fillable = ['title'];
 
-    public function project()
-    {
-        return $this->belongsTo(Project::class);
-    }
 }

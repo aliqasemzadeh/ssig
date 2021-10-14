@@ -13,11 +13,11 @@ class Project extends Model
 
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     public function group()
     {
-        return $this->hasOne(Group::class);
+        return $this->belongsTo(Group::class);
     }
 }

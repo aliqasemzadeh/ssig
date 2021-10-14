@@ -17,7 +17,7 @@
                                 <svg class="-ml-1 mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
                                 </svg>
-                                {{ __('admin.group_create') }}
+                                {{ __('global.create') }}
                             </button>
                         </div>
                     </div>
@@ -30,24 +30,29 @@
                                     <thead class="bg-gray-50">
                                     <tr>
                                         <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Name
+                                            {{ __('global.title') }}
                                         </th>
                                         <th scope="col" class="relative px-6 py-3">
-                                            <span class="sr-only">Edit</span>
+                                            <span class="sr-only">{{ __('global.actions') }}</span>
                                         </th>
                                     </tr>
                                     </thead>
-                                    <tbody class="bg-white divide-y divide-gray-200">
-                                    @foreach($groups as $group)
-                                    <tr>
+                                    <tbody class="bg-white divide-y divide-gray-200"  wire:sortable="updateOrder">
+                                    @forelse($groups as $group)
+                                    <tr wire:sortable.item="{{ $group->id }}" wire:key="product-{{ $group->id }}">
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             {{ $group->title }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
-                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">{{ __('global.edit') }}</a>
+                                            <a href="#" class="text-indigo-600 hover:text-red-900">{{ __('global.remove') }}</a>
                                         </td>
                                     </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="2">{{ __('admin.empty') }}</td>
+                                        </tr>
+                                    @endforelse
 
                                     <!-- More people... -->
                                     </tbody>

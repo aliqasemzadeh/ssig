@@ -5,4 +5,5 @@ return [
     'project' => 'پروژه ها',
     'user' => 'کاربرها',
     'category' => 'دسته ها',
+
 ];

@@ -2,6 +2,9 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     mode: 'jit',
+    presets: [
+        require('./vendor/ph7jack/wireui/tailwind.config.js')
+    ],
     purge: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './vendor/laravel/jetstream/**/*.blade.php',
@@ -9,6 +12,9 @@ module.exports = {
         './resources/views/**/*.blade.php',
         './resources/vendor/**/*.blade.php',
         './vendor/rappasoft/laravel-livewire-tables/resources/views/tailwind/**/*.blade.php',
+        './vendor/ph7jack/wireui/resources/**/*.blade.php',
+        './vendor/ph7jack/wireui/ts/**/*.ts',
+        './vendor/ph7jack/wireui/src/View/**/*.php'
     ],
 
     theme: {

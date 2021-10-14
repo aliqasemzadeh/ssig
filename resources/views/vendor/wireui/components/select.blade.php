@@ -56,7 +56,7 @@
             </x-slot>
 
             <x-slot name="append">
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 gap-x-2">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-2 gap-x-2">
                     <button class="focus:outline-none"
                         x-show="!isEmptyModel() && !disabled && !readonly"
                         x-on:click="clearModel"

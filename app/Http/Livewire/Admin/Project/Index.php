@@ -9,9 +9,16 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
+
+    protected $listeners = [
+        'confirmedDelete',
+        'cancelledDelete',
+        'updateList' => 'render'
+    ];
+
     public function render()
     {
-        $projects = Project::paginate(15);
+        $projects = Project::with(['group', 'category'])->paginate(15);
         return view('livewire.admin.project.index', compact('projects'))->layout('layouts.admin');
     }
 }

@@ -12,4 +12,9 @@ class Group extends Model
     use SoftDeletes;
 
     public $fillable = ['title'];
+
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }

@@ -10,4 +10,14 @@ class Project extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    public function category()
+    {
+        return $this->hasOne(Category::class);
+    }
+
+    public function group()
+    {
+        return $this->hasOne(Group::class);
+    }
 }

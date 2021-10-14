@@ -46,7 +46,7 @@
         @endif
     </x-input>
 
-    <div class="fixed inset-0 z-20 overflow-y-auto sm:absolute sm:inset-auto sm:top-10 sm:mt-1 sm:left-0"
+    <div class="fixed inset-0 z-20 overflow-y-auto sm:absolute sm:inset-auto sm:top-10 sm:mt-1 sm:right-0"
         x-cloak
         style="display: none;"
         x-show="popover"
@@ -196,7 +196,7 @@
                                 x-on:click="selectTime(time)">
                                 <span x-text="time.label"></span>
                                 <span class="text-primary-600 dark:text-secondary-400 group-hover:text-white
-                                             absolute inset-y-0 left-0 flex items-center pl-4"
+                                             absolute inset-y-0 right-0 flex items-center pr-4"
                                     x-show="modelTime === time.value">
                                     <x-icon name="check" class="h-5 w-5" />
                                 </span>

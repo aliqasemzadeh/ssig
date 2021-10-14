@@ -8,6 +8,11 @@ return [
         'supply',
         'revenue',
         'admin'
+    ],
+    'categories' => [
+        'Project',
+        'Document',
+        'ProjectFile',
     ]
 
 ];

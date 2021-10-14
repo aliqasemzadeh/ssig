@@ -61,11 +61,14 @@
                                     </tr>
                                     @empty
                                         <tr>
-                                            <td colspan="2">{{ __('admin.empty') }}</td>
+                                            <td colspan="2">
+                                                <p class="p-4 text-center">
+                                                    {{ __('global.empty') }}
+                                                </p>
+                                            </td>
                                         </tr>
                                     @endforelse
 
-                                    <!-- More people... -->
                                     </tbody>
                                 </table>
                             </div>

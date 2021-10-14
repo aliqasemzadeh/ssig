@@ -51,7 +51,7 @@
         </x-input>
     </div>
 
-    <div class="fixed inset-0 z-10 sm:absolute sm:inset-auto sm:top-0 sm:left-0 sm:mt-6"
+    <div class="fixed inset-0 z-10 sm:absolute sm:inset-auto sm:top-0 sm:right-0 sm:mt-6"
         x-cloak
         x-show="showPicker"
         x-on:click.outside="closePicker"
@@ -110,7 +110,7 @@
                             x-on:click="selectTime(time)">
                             <span x-text="time" class="font-normal block truncate"></span>
                             <span class="absolute text-primary-600 group-hover:text-white inset-y-0
-                                         left-0 flex items-center pl-4 dark:text-secondary-400"
+                                         right-0 flex items-center pr-4 dark:text-secondary-400"
                                 x-show="input === time">
                                 <x-icon name="check" class="h-5 w-5" />
                             </span>

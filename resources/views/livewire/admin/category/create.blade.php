@@ -1,5 +1,11 @@
 <div>
     <x-card title="{{ __('global.create') }}">
+        <x-persian-date-picker
+            name="birthday"
+            type="text"
+            id="birthday"
+            placeholder="DD/MM/YYYY"
+        />
         <x-select
             label="{{ __('global.type') }}"
             wire:model.defer="type"

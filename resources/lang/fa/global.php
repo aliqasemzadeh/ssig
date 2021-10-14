@@ -13,6 +13,8 @@ return [
     'type' => ' نوع',
     'remove' => ' حذف',
     'delete' => ' حذف',
+    'group' => ' گروه',
+    'category' => ' دسته',
     'cancel' => ' لغو',
     'confirm' => ' تایید',
     'title' => 'عنوان',
@@ -21,6 +23,7 @@ return [
     'created' => ' ایجاد شد.',
     'edited' => ' ویرایش شد.',
     'cancelled' => ' لغو شد.',
+    'actions' => 'اقدام ها',
     'are_you_sure' => 'آیا اطمینان دارید؟',
     'empty' => 'هیچ آیتمی وجود ندارد.',
 ];

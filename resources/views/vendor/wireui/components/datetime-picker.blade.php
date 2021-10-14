@@ -30,7 +30,7 @@
         ::value="getInputValue()">
         @if (!$readonly && !$disabled)
             <x-slot name="append">
-                <div class="absolute inset-y-0 right-3 z-5 flex items-center justify-center">
+                <div class="absolute inset-y-0 left-0 z-5 flex items-center justify-center">
                     <div class="flex items-center gap-x-2 my-auto
                         {{ $errors->has($name) ? 'text-negative-400 dark:text-negative-600' : 'text-secondary-400' }}">
                         <x-icon class="cursor-pointer w-4 h-4 hover:text-negative-500 transition-colors ease-in-out duration-150"
@@ -46,7 +46,7 @@
         @endif
     </x-input>
 
-    <div class="fixed inset-0 z-20 overflow-y-auto sm:absolute sm:inset-auto sm:top-10 sm:mt-1 sm:right-0"
+    <div class="fixed inset-0 z-20 overflow-y-auto sm:absolute sm:inset-auto sm:top-10 sm:mt-1 sm:left-0"
         x-cloak
         style="display: none;"
         x-show="popover"
@@ -127,7 +127,7 @@
                             class="rounded-lg flex-shrink-0"
                             x-show="!monthsPicker"
                             x-on:click="nextMonth"
-                            icon="chevron-right"
+                            icon="chevron-left"
                             flat
                         />
                     </div>
@@ -185,7 +185,7 @@
                     <div x-ref="timesContainer" class="mt-1 w-full h-52 pb-1 pt-2 overflow-y-auto flex flex-col picker-times">
                         <template x-for="time in filteredTimes">
                             <button class="group rounded-md focus:outline-none focus:bg-primary-100 dark:focus:bg-secondary-700
-                                           relative py-2 pl-2 pr-9 text-left transition-colors ease-in-out duration-100 cursor-pointer select-none
+                                           relative py-2 pr-2 pl-9 text-right transition-colors ease-in-out duration-100 cursor-pointer select-none
                                            hover:text-white hover:bg-primary-600 dark:hover:bg-secondary-700 dark:text-secondary-400"
                                 :class="{
                                     'text-primary-600': modelTime === time.value,
@@ -196,7 +196,7 @@
                                 x-on:click="selectTime(time)">
                                 <span x-text="time.label"></span>
                                 <span class="text-primary-600 dark:text-secondary-400 group-hover:text-white
-                                             absolute inset-y-0 right-0 flex items-center pr-4"
+                                             absolute inset-y-0 left-0 flex items-center pl-4"
                                     x-show="modelTime === time.value">
                                     <x-icon name="check" class="h-5 w-5" />
                                 </span>

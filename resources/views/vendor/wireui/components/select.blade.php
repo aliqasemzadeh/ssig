@@ -28,7 +28,7 @@
             :icon="$icon"
             {{ $attributes->whereDoesntStartWith(['wire:model', 'type']) }}>
             <x-slot name="prepend">
-                <div class="absolute left-0 inset-y-0 pl-2 pr-14 w-full flex items-center overflow-hidden cursor-pointer"
+                <div class="absolute right-0 inset-y-0 pr-2 pl-14 w-full flex items-center overflow-hidden cursor-pointer"
                     :class="{ 'pointer-events-none': disabled || readonly }"
                     x-show="multiselect"
                     x-on:click="togglePopover">
@@ -38,7 +38,7 @@
                             x-text="model ? model.length : ''">
                         </span>
                         <template x-for="selected in selectedOptions" :key="`selected.${selected.value}`">
-                            <span class="inline-flex items-center py-0.5 pl-2 pr-0.5 rounded-full text-xs font-medium
+                            <span class="inline-flex items-center py-0.5 pr-2 pl-0.5 rounded-full text-xs font-medium
                                          border border-secondary-200 shadow-sm bg-secondary-100 text-secondary-700
                                          dark:bg-secondary-700 dark:text-secondary-400 dark:border-none
                                 ">
@@ -56,7 +56,7 @@
             </x-slot>
 
             <x-slot name="append">
-                <div class="absolute inset-y-0 right-0 flex items-center pr-2 gap-x-2">
+                <div class="absolute inset-y-0 left-0 flex items-center pl-2 gap-x-2">
                     <button class="focus:outline-none"
                         x-show="!isEmptyModel() && !disabled && !readonly"
                         x-on:click="clearModel"

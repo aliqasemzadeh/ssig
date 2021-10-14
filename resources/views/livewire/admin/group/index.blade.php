@@ -44,7 +44,7 @@
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                             {{ $group->title }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <div x-data="{ open: false }">
                                                 <button @click="open = ! open">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -53,7 +53,7 @@
                                                 </button>
                                                 <div x-cloak x-transition x-show="open" @click.away="open = false" class="origin-top-left absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                                                     <a href="#editModal_{{ $group->id }}" wire:click="$emit('openModal', 'admin.group.edit', {{ json_encode(['group' => $group]) }})" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">{{ __('global.edit') }}</a>
-                                                    <a href="#deleteWatcher_{{ $group->id }}" wire:click="delete({{ $group }})" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">{{ __('global.delete') }}</a>
+                                                    <a href="#deleteModal_{{ $group->id }}" wire:click="delete({{ $group }})" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">{{ __('global.delete') }}</a>
                                                 </div>
                                             </div>
 

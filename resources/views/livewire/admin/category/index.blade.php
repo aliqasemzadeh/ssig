@@ -48,17 +48,17 @@
                                             {{ $category->title }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                            {{ $category->type }}
+                                            {{ __('category.'.$category->type) }}
                                         </td>
-                                        <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
+                                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                             <div x-data="{ open: false }">
                                                 <button @click="open = ! open">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
                                                     </svg>
                                                 </button>
-                                                <div x-cloak x-transition x-show="open" @click.away="open = false" class="origin-top-left absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                                                    <a href="#editModal_{{ $category->id }}" wire:click="$emit('openModal', 'admin.group.edit', {{ json_encode(['category' => $category]) }})" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">{{ __('global.edit') }}</a>
+                                                <div x-cloak x-transition x-show="open" @click.away="open = false" class="origin-top-right absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                                                    <a href="#editModal_{{ $category->id }}" wire:click="$emit('openModal', 'admin.category.edit', {{ json_encode(['category' => $category]) }})" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">{{ __('global.edit') }}</a>
                                                     <a href="#deleteModal_{{ $category->id }}" wire:click="delete({{ $category }})" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">{{ __('global.delete') }}</a>
                                                 </div>
                                             </div>

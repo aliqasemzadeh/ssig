@@ -5,7 +5,7 @@
 
 <div class="@if($disabled) opacity-60 @endif">
     @if ($label || $cornerHint)
-        <div class="flex {{ !$label && $cornerHint ? 'justify-end' : 'justify-between' }} mb-1">
+        <div class="flex {{ !$label && $cornerHint ? 'justify-start' : 'justify-between' }} mb-1">
             @if ($label)
                 <x-label :label="$label" :has-error="$hasError" :for="$id" />
             @endif
@@ -18,12 +18,12 @@
 
     <div class="relative rounded-md @unless($shadowless) shadow-sm @endunless">
         @if ($prefix || $icon)
-            <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none
+            <div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none
                 {{ $hasError ? 'text-negative-500' : 'text-secondary-400' }}">
                 @if ($icon)
                     <x-icon :name="$icon" class="h-5 w-5" />
                 @elseif($prefix)
-                    <span class="pl-1 flex items-center self-center">
+                    <span class="pr-1 flex items-center self-center">
                         {{ $prefix }}
                     </span>
                 @endif
@@ -39,12 +39,12 @@
         ]) }} />
 
         @if ($suffix || $rightIcon || ($hasError && !$append))
-            <div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none
+            <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none
                 {{ $hasError ? 'text-negative-500' : 'text-secondary-400' }}">
                 @if ($rightIcon)
                     <x-icon :name="$rightIcon" class="h-5 w-5" />
                 @elseif ($suffix)
-                    <span class="pr-1 flex items-center justify-center">
+                    <span class="pl-1 flex items-center justify-center">
                         {{ $suffix }}
                     </span>
                 @elseif ($hasError)

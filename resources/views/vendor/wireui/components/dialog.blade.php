@@ -58,13 +58,13 @@
 
                     <div class="mt-4 w-full" :class="{ 'sm:mt-5': style === 'center' }">
                         <h3 class="text-lg leading-6 font-medium text-secondary-900 dark:text-secondary-400 text-center"
-                            :class="{ 'sm:text-left': style === 'inline' }"
+                            :class="{ 'sm:text-right': style === 'inline' }"
                             @unless($title) x-ref="title" @endunless>
                             {{ $title }}
                         </h3>
 
                         <p class="mt-2 text-sm text-secondary-500 text-center"
-                            :class="{ 'sm:text-left': style === 'inline' }"
+                            :class="{ 'sm:text-right': style === 'inline' }"
                             @unless($description) x-ref="description" @endunless>
                             {{ $description }}
                         </p>

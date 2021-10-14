@@ -26,6 +26,7 @@
                     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                             <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-gray-50">
                                     <tr>
@@ -44,8 +45,18 @@
                                             {{ $group->title }}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap text-left text-sm font-medium">
-                                            <a href="#" class="text-indigo-600 hover:text-indigo-900">{{ __('global.edit') }}</a>
-                                            <a href="#" class="text-indigo-600 hover:text-red-900">{{ __('global.remove') }}</a>
+                                            <div x-data="{ open: false }">
+                                                <button @click="open = ! open">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="text-gray-400 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" />
+                                                    </svg>
+                                                </button>
+                                                <div x-cloak x-transition x-show="open" @click.away="open = false" class="origin-top-left absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                                                    <a href="#editModal_{{ $group->id }}" wire:click="$emit('openModal', 'admin.group.edit', {{ json_encode(['group' => $group]) }})" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">{{ __('global.edit') }}</a>
+                                                    <a href="#deleteWatcher_{{ $group->id }}" wire:click="delete({{ $group }})" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem" tabindex="-1">{{ __('global.delete') }}</a>
+                                                </div>
+                                            </div>
+
                                         </td>
                                     </tr>
                                     @empty

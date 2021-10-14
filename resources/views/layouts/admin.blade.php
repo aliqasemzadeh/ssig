@@ -21,7 +21,7 @@
 
 <div class="h-screen flex overflow-hidden bg-gray-100">
     <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
-    <div class="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 flex z-40 md:hidden" role="dialog" aria-modal="true" x-cloak>
         <div class="fixed inset-0 bg-gray-600 bg-opacity-75" aria-hidden="true"></div>
         <div class="relative flex-1 flex flex-col max-w-xs w-full pt-5 pb-4 bg-gray-800">
             <div class="absolute top-0 right-0 -mr-12 pt-2">
@@ -89,6 +89,7 @@
 
 @stack('modals')
 @livewireScripts
+<x-livewire-alert::scripts />
 @livewire('livewire-ui-modal')
 </body>
 </html>

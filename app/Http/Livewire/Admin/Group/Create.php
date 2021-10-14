@@ -22,6 +22,15 @@ class Create extends ModalComponent
         $group->title = $this->title;
         $group->description = $this->description;
         $group->save();
+
+        $this->closeModalWithEvents([
+            \App\Http\Livewire\Admin\Group\Index::getName() => 'updateList',
+        ]);
+
+        $this->alert(
+            'success',
+            __('admin.created')
+        );
     }
 
     public function render()

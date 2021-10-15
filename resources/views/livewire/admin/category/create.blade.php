@@ -14,7 +14,7 @@
         <x-slot name="footer">
             <div class="flex justify-between items-center">
                 <x-button label="{{ __('global.cancel') }}"  wire:click="$emit('closeModal')" flat negative />
-                <x-button label="{{ __('global.create') }}" wire:click="create" primary />
+                <x-button label="{{ __('global.create') }}" wire:click="create"  primary />
             </div>
         </x-slot>
     </x-card>

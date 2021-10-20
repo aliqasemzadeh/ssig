@@ -2,9 +2,8 @@
 
 namespace App\Providers;
 
-use App\View\Components\PersianDatePicker;
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -25,6 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::component('persian-date-picker', PersianDatePicker::class);
+        Paginator::useBootstrap();
     }
 }

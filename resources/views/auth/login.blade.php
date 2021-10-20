@@ -1,56 +1,60 @@
 <x-guest-layout>
-    <div class="mt-8">
-        <div class="mt-6">
-            <x-jet-validation-errors class="mb-4" />
+    <x-jet-authentication-card>
+        <x-slot name="logo">
+            <x-jet-authentication-card-logo />
+        </x-slot>
+
+        <div class="card-body">
+
+            <x-jet-validation-errors class="mb-3 rounded-0" />
 
             @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600">
+                <div class="alert alert-success mb-3 rounded-0" role="alert">
                     {{ session('status') }}
                 </div>
             @endif
 
             <form method="POST" action="{{ route('login') }}">
                 @csrf
-                <div class="sm:col-span-3">
-                    <x-jet-label for="system" value="{{ __('global.select_system') }}" />
-                    <div class="mt-1">
-                        <select id="system" name="system" autocomplete="system" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                            @foreach(config('system.panels') as $system)
-                            <option value="{{ $system }}">{{ __('system.'.$system) }}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                <div class="mb-3">
+                    <x-jet-label value="{{ __('Email') }}" />
+
+                    <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"
+                                 name="email" :value="old('email')" required />
+                    <x-jet-input-error for="email"></x-jet-input-error>
                 </div>
-                <div class="mt-4">
-                    <x-jet-label for="username" value="{{ __('global.username') }}" />
-                    <x-jet-input id="username" class="block mt-1 w-full" type="text" name="username" :value="old('username')" required autofocus />
+
+                <div class="mb-3">
+                    <x-jet-label value="{{ __('Password') }}" />
+
+                    <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password"
+                                 name="password" required autocomplete="current-password" />
+                    <x-jet-input-error for="password"></x-jet-input-error>
                 </div>
-                <div class="mt-4">
-                    <x-jet-label for="password" value="{{ __('global.password') }}" />
-                    <x-jet-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
-                </div>
-                <div class="mt-4">
-                    <x-jet-label for="captcha" value="{{ __('global.captcha') }}" />
-                    <div class="relative flex items-center">
-                        <input type="number" name="captcha" id="captcha" class="block mt-1 w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">
-                        <div class="absolute inset-y-0 left-0 flex py-3 pr-3">
-                            {!! captcha_img() !!}
-                        </div>
+
+                <div class="mb-3">
+                    <div class="custom-control custom-checkbox">
+                        <x-jet-checkbox id="remember_me" name="remember" />
+                        <label class="custom-control-label" for="remember_me">
+                            {{ __('Remember Me') }}
+                        </label>
                     </div>
                 </div>
 
-                <div class="flex items-center justify-end mt-4">
-                    @if (Route::has('password.request'))
-                        <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                            {{ __('Forgot your password?') }}
-                        </a>
-                    @endif
+                <div class="mb-0">
+                    <div class="d-flex justify-content-end align-items-baseline">
+                        @if (Route::has('password.request'))
+                            <a class="text-muted me-3" href="{{ route('password.request') }}">
+                                {{ __('Forgot your password?') }}
+                            </a>
+                        @endif
 
-                    <x-jet-button class="ml-4">
-                        {{ __('global.login') }}
-                    </x-jet-button>
+                        <x-jet-button>
+                            {{ __('Log in') }}
+                        </x-jet-button>
+                    </div>
                 </div>
             </form>
         </div>
-    </div>
+    </x-jet-authentication-card>
 </x-guest-layout>

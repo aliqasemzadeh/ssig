@@ -2189,3 +2189,4 @@ var App = function () {
 $(document).ready(function() {
 	App.init();
 });
+

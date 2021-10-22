@@ -45,6 +45,8 @@ mix.combine([
 	'resources/js/app.js'
 ], 'public/assets/js/app.min.js');
 
+mix.js('resources/js/custom.js', 'public/assets/js')
+    .sourceMaps();
 
 // plugins
 mix.copy('node_modules/pace-js', 'public/assets/plugins/pace-js');
@@ -82,6 +84,7 @@ mix.copy('node_modules/simple-line-icons', 'public/assets/plugins/simple-line-ic
 mix.copy('node_modules/jquery-knob/dist', 'public/assets/plugins/jquery-knob/dist');
 mix.copy('node_modules/sweetalert/dist', 'public/assets/plugins/sweetalert/dist');
 mix.copy('node_modules/@majidh1/jalalidatepicker/dist', 'public/assets/plugins/jalalidatepicker/dist');
+mix.copy('node_modules/flatpickr-persian/dist', 'public/assets/plugins/flatpickr-persian/dist');
 mix.copy('node_modules/clipboard/dist', 'public/assets/plugins/clipboard/dist');
 mix.copy('node_modules/jstree/dist', 'public/assets/plugins/jstree/dist');
 mix.copy('node_modules/gritter', 'public/assets/plugins/gritter');

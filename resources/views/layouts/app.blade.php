@@ -52,7 +52,6 @@
 	@yield('outside-content')
 
 	@include('includes.page-js')
-    @livewireScripts
-    @livewire('livewire-ui-modal')
+
 </body>
 </html>

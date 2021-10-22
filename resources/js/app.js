@@ -41,6 +41,7 @@ Website: http://www.seantheme.com/color-admin/
 	<!-- ======== APPLICATION SETTING ======== -->
 	Application Controller
 */
+
 var app = {
 	id: '#app',
 	isMobile: ((/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) || window.innerWidth < 992),
@@ -2186,7 +2187,10 @@ var App = function () {
   };
 }();
 
+
 $(document).ready(function() {
 	App.init();
 });
+
+
 
